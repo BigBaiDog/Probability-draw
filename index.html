@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript" charset="utf-8">
+			var arr=[50,5,30,15];
+			var p=lottery(arr);
+			alert(p);
+			
+			function lottery (probability) {
+				var situation= probability.length;
+				var total=0;
+				for (var i=0; i<situation; i++) {
+					total+= probability[i];
+				}
+				var number= Math.random()*total;
+				for (var i=0; i<situation; i++) {
+					if (number< probability[i])
+						return i;
+					else
+						number-= probability[i];
+				}
+				return situation-1;
+			}
+
+		</script>
+	</head>
+	<body>
+	</body>
+</html>
